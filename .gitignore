@@ -1,0 +1,17 @@
+/system_design/python/src/notification/manifest/secret.yaml
+/.idea
+/system_design/python/src/notification/venv
+/system_design/python/src/notification/requirements.txt
+/.vscode
+/microservices
+/system_design/python/src/auth/venv/Include
+/system_design/python/src/auth/venv/Lib
+/system_design/python/src/auth/venv/Scripts
+/system_design/python/src/auth/venv/.env
+/system_design/python/src/auth/venv/init.sql
+/system_design/python/src/auth/venv/pyvenv.cfg
+/system_design/python/src/converter/venv
+/system_design/python/src/converter/test.mkv
+/system_design/python/src/gateway/venv
+/system_design/python/src/auth/manifest/secret.yaml
+/system_design/python/src/converter/manifest/secret.yaml

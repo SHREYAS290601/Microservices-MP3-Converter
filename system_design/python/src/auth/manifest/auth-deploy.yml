@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth
+  labels:
+    app: auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      containers:
+        - name: auth
+          image: shrek29/auth:latest
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: auth-configmap
+            - secretRef:
+                name: auth-secret
+          resources:
+            limits:
+              cpu: "500m"     # Maximum CPU usage allowed (500 milliCPU units)
+              memory: "512Mi" # Maximum memory usage allowed (512 Mebibytes)
+            requests:
+              cpu: "200m"     # Minimum CPU required (200 milliCPU units)
+              memory: "256Mi" # Minimum memory required (256 Mebibytes)
